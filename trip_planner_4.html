@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grecja · Macedonia · Albania — Maj 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #1a1a24;
+  --bg4: #22222e;
+  --border: rgba(255,255,255,0.07);
+  --border2: rgba(255,255,255,0.12);
+  --text: #f0ede8;
+  --text2: #9896a0;
+  --text3: #5a5868;
+  --accent: #c8f064;
+  --accent2: #64d4f0;
+  --accent3: #f06464;
+  --accent4: #f0a864;
+  --gr: #3dbe6c;
+  --mk: #e8a020;
+  --al: #e03030;
+  --pl: #e8e8e8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* NOISE OVERLAY */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.4;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border2);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 30%, rgba(100,212,240,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(200,240,100,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 40% at 90% 90%, rgba(240,100,100,0.05) 0%, transparent 50%);
+}
+.hero-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--text2);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+}
+.hero-tag::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(48px, 8vw, 96px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  margin-bottom: 32px;
+}
+.hero h1 .line1 { display: block; color: var(--text); }
+.hero h1 .line2 { display: block; color: var(--accent); }
+.hero h1 .line3 { display: block; color: var(--text2); font-weight: 400; font-style: italic; font-size: 0.55em; letter-spacing: 0em; margin-top: 8px; font-family: 'DM Sans', sans-serif; }
+.hero-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.meta-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.meta-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+}
+.hero-flags {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+.flag-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border2);
+  background: var(--bg2);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text2);
+}
+.flag-dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot-gr { background: var(--gr); }
+.dot-mk { background: var(--mk); }
+.dot-al { background: var(--al); }
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,15,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 60px;
+  height: 56px;
+  gap: 2px;
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  margin-right: auto;
+}
+.nav-btn {
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  color: var(--text2);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.nav-btn:hover { color: var(--text); background: var(--bg3); }
+.nav-btn.active { color: var(--accent); background: rgba(200,240,100,0.08); }
+
+/* SECTIONS */
+.section { display: none; }
+.section.active { display: block; }
+
+/* PLAN SECTION */
+.plan-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 60px;
+}
+.plan-header {
+  margin-bottom: 40px;
+}
+.plan-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.plan-header p {
+  color: var(--text2);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.day-block {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.day-block:hover { border-color: var(--border2); }
+.day-block.open { border-color: rgba(200,240,100,0.2); }
+
+.day-head {
+  display: grid;
+  grid-template-columns: 80px 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  cursor: pointer;
+  background: var(--bg2);
+  transition: background 0.15s;
+  user-select: none;
+}
+.day-head:hover { background: var(--bg3); }
+.day-block.open .day-head { background: var(--bg3); }
+
+.day-date {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.day-title-wrap {}
+.day-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+}
+.day-sub {
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+.day-flags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dflag {
+  font-size: 20px;
+}
+.darr {
+  font-size: 10px;
+  color: var(--text3);
+}
+.day-badges {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.badge {
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'DM Mono', monospace;
+}
+.b-fly { background: rgba(100,212,240,0.12); color: var(--accent2); border: 1px solid rgba(100,212,240,0.2); }
+.b-hike { background: rgba(200,240,100,0.1); color: var(--accent); border: 1px solid rgba(200,240,100,0.2); }
+.b-transit { background: rgba(240,168,100,0.1); color: var(--accent4); border: 1px solid rgba(240,168,100,0.2); }
+.b-camp { background: rgba(61,190,108,0.1); color: var(--gr); border: 1px solid rgba(61,190,108,0.2); }
+
+.chevron {
+  font-size: 11px;
+  color: var(--text3);
+  transition: transform 0.2s;
+  margin-left: 8px;
+}
+.day-block.open .chevron { transform: rotate(180deg); }
+
+.day-body {
+  display: none;
+  padding: 0 24px 24px;
+  background: var(--bg2);
+  border-top: 1px solid var(--border);
+}
+.day-block.open .day-body { display: block; }
+
+/* TIMELINE */
+.timeline { padding-top: 20px; }
+.tl-row {
+  display: grid;
+  grid-template-columns: 52px 20px 1fr;
+  gap: 0 12px;
+  min-height: 40px;
+}
+.tl-time {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+  text-align: right;
+  padding-top: 2px;
+}
+.tl-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.tl-dot.fly { background: var(--accent2); box-shadow: 0 0 8px rgba(100,212,240,0.4); }
+.tl-dot.hike { background: var(--accent); box-shadow: 0 0 8px rgba(200,240,100,0.4); }
+.tl-dot.transit { background: var(--accent4); }
+.tl-dot.camp { background: var(--gr); }
+.tl-dot.food { background: #e064a0; }
+.tl-dot.info { background: var(--text3); }
+.tl-dot.sun { background: #f0d064; box-shadow: 0 0 10px rgba(240,208,100,0.5); }
+.tl-line {
+  flex: 1;
+  width: 1px;
+  background: var(--border);
+  margin: 4px 0;
+  min-height: 24px;
+}
+.tl-content { padding-bottom: 16px; }
+.tl-main {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+  font-weight: 400;
+}
+.tl-main strong { font-weight: 500; color: var(--text); }
+.tl-detail {
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.tl-cost {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  margin-top: 2px;
+}
+.tip {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 2px solid var(--accent4);
+  background: rgba(240,168,100,0.05);
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.tip.green { border-left-color: var(--gr); background: rgba(61,190,108,0.05); }
+.tip.blue { border-left-color: var(--accent2); background: rgba(100,212,240,0.05); }
+.tip.red { border-left-color: var(--accent3); background: rgba(240,100,100,0.05); }
+
+/* GEAR SECTION */
+.gear-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 60px;
+}
+.gear-sticky {
+  position: sticky;
+  top: 56px;
+  z-index: 50;
+  background: rgba(10,10,15,0.95);
+  backdrop-filter: blur(20px);
+  padding: 16px 0;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.weight-display {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.w-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1;
+  transition: color 0.3s;
+}
+.w-num.warn { color: var(--accent4); }
+.w-num.danger { color: var(--accent3); }
+.w-unit { font-size: 14px; color: var(--text2); }
+.w-max { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); margin-left: auto; }
+.wbar-track {
+  height: 4px;
+  background: var(--bg4);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.wbar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease, background 0.3s;
+}
+.wbar-fill.warn { background: var(--accent4); }
+.wbar-fill.danger { background: var(--accent3); }
+.wscale {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+}
+.w-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 6px;
+}
+
+.gear-cat-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text3);
+  text-transform: uppercase;
+  padding: 24px 0 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2px;
+}
+.gi {
+  display: grid;
+  grid-template-columns: 20px 1fr 70px 52px;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  transition: opacity 0.2s;
+}
+.gi.done { opacity: 0.35; }
+.gi input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+.gi-name {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.4;
+}
+.gi-name.crossed { text-decoration: line-through; }
+.gi-d {
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 2px;
+  line-height: 1.3;
+}
+.gi-price {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-align: right;
+  padding-top: 2px;
+}
+.gi-w {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text2);
+  text-align: right;
+  padding-top: 2px;
+}
+.stag {
+  display: inline-block;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(100,212,240,0.1);
+  color: var(--accent2);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.must-tag {
+  display: inline-block;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(240,100,100,0.1);
+  color: var(--accent3);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+/* MONEY SECTION */
+.money-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 60px;
+}
+.curr-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.curr-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+.curr-card:hover { border-color: var(--border2); }
+.curr-emoji { font-size: 32px; margin-bottom: 12px; display: block; }
+.curr-name { font-size: 11px; color: var(--text2); font-family: 'DM Mono', monospace; letter-spacing: 0.05em; margin-bottom: 8px; }
+.curr-amount { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.curr-pln { font-size: 12px; color: var(--text2); margin-bottom: 16px; }
+.curr-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+}
+.curr-line span:first-child { color: var(--text2); }
+.curr-line span:last-child { font-family: 'DM Mono', monospace; color: var(--text); }
+
+.cost-table { width: 100%; border-collapse: collapse; }
+.cost-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.cost-row.total {
+  padding: 16px 0;
+  border-bottom: none;
+  border-top: 1px solid var(--border2);
+  margin-top: 4px;
+}
+.cost-row .cl { color: var(--text2); }
+.cost-row .cv { font-family: 'DM Mono', monospace; color: var(--text); }
+.cost-row.total .cl { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--text); }
+.cost-row.total .cv { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; color: var(--accent); }
+
+/* FOOD SECTION */
+.food-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 60px;
+}
+.food-intro {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+.food-section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 32px;
+  color: var(--text);
+}
+.food-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  align-items: start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.fi-name { font-size: 13px; color: var(--text); font-weight: 500; }
+.fi-note { font-size: 11px; color: var(--text2); margin-top: 2px; }
+.fi-qty { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text2); text-align: right; white-space: nowrap; padding-top: 2px; }
+.fi-price { font-family: 'DM Mono', monospace; font-size: 12px; font-weight: 500; color: var(--accent); white-space: nowrap; padding-top: 2px; text-align: right; }
+.food-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border-top: 1px solid var(--border2);
+  margin-top: 4px;
+}
+.food-total span:last-child { color: var(--accent); }
+
+/* SECTION HEADER */
+.sec-h {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.sec-h h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+.sec-h-sub { font-size: 13px; color: var(--text2); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero { padding: 32px; }
+  .hero-flags { top: 32px; right: 32px; }
+  nav { padding: 0 16px; }
+  .plan-wrap, .gear-wrap, .money-wrap, .food-wrap { padding: 32px 20px; }
+  .curr-grid { grid-template-columns: 1fr; }
+  .day-head { grid-template-columns: 60px 1fr auto; gap: 10px; }
+  .day-badges { display: none; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.section.active .day-block,
+.section.active .curr-card,
+.section.active .food-item {
+  animation: fadeUp 0.3s ease both;
+}
+.section.active .day-block:nth-child(2) { animation-delay: 0.04s; }
+.section.active .day-block:nth-child(3) { animation-delay: 0.08s; }
+.section.active .day-block:nth-child(4) { animation-delay: 0.12s; }
+.section.active .day-block:nth-child(5) { animation-delay: 0.16s; }
+.section.active .day-block:nth-child(6) { animation-delay: 0.20s; }
+.section.active .day-block:nth-child(7) { animation-delay: 0.24s; }
+.section.active .day-block:nth-child(8) { animation-delay: 0.28s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-flags">
+    <div class="flag-pill"><div class="flag-dot dot-gr"></div>Grecja</div>
+    <div class="flag-pill"><div class="flag-dot dot-mk"></div>Macedonia Pn.</div>
+    <div class="flag-pill"><div class="flag-dot dot-al"></div>Albania</div>
+  </div>
+  <div class="hero-tag">3 osoby · 7 dni · 100% plecakowy</div>
+  <h1>
+    <span class="line1">Wyprawa</span>
+    <span class="line2">na Bałkany</span>
+    <span class="line3">Maj 2025 · Pelister 2601m · Jezioro Prespa · Tirana</span>
+  </h1>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <div class="meta-label">Start</div>
+      <div class="meta-val">25 maj · POZ</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Koniec</div>
+      <div class="meta-val">31 maj · KRK</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Trekking</div>
+      <div class="meta-val">~60 km</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Budżet / os</div>
+      <div class="meta-val">~920 zł</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Nocleg</div>
+      <div class="meta-val">4× biwak</div>
+    </div>
+  </div>
+</section>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">GR · MK · AL</div>
+  <button class="nav-btn active" onclick="showSection('plan',this)">Plan dnia</button>
+  <button class="nav-btn" onclick="showSection('gear',this)">Sprzęt</button>
+  <button class="nav-btn" onclick="showSection('money',this)">Kasa</button>
+</nav>
+
+<!-- PLAN SECTION -->
+<section id="s-plan" class="section active">
+<div class="plan-wrap">
+  <div class="sec-h">
+    <h2>Plan dnia po dniu</h2>
+    <span class="sec-h-sub">Kliknij dzień żeby rozwinąć godzinowy harmonogram</span>
+  </div>
+  <div id="days-container"></div>
+</div>
+</section>
+
+<!-- GEAR SECTION -->
+<section id="s-gear" class="section">
+<div class="gear-wrap">
+  <div class="sec-h">
+    <h2>Lista sprzętu</h2>
+    <span class="sec-h-sub">Odznaczaj co pakujesz — waga aktualizuje się na żywo</span>
+  </div>
+  <div class="gear-sticky">
+    <div class="weight-display">
+      <div class="w-num" id="w-num">0</div>
+      <div class="w-unit">kg / osoba</div>
+      <div class="w-max" id="w-meta-top">0 / 0 zaznaczonych</div>
+    </div>
+    <div class="wbar-track"><div class="wbar-fill" id="wbar" style="width:0%"></div></div>
+    <div class="wscale"><span>0</span><span>8 kg</span><span>13 kg</span><span>17 kg ✓</span><span>20 kg</span></div>
+    <div class="w-meta">
+      <span id="w-sub">cel: maks. 17–18 kg z jedzeniem</span>
+      <span id="w-status" style="color:var(--accent)">OK ✓</span>
+    </div>
+  </div>
+  <div id="gear-container"></div>
+  <div style="font-size:11px;color:var(--text3);padding:16px 0;margin-top:8px;border-top:1px solid var(--border)">
+    * Namiot liczony jako 2,5 kg (środek zakresu 2–3 kg) podzielone na osoby · Jedzenie 1,5 kg maleje z każdym dniem · Buty trekkingowe na nogach — nie liczone
+  </div>
+</div>
+</section>
+
+<!-- MONEY SECTION -->
+<section id="s-money" class="section">
+<div class="money-wrap">
+  <div class="sec-h">
+    <h2>Kasa i waluty</h2>
+    <span class="sec-h-sub">3 kraje · 3 waluty · pobierz gotówkę w Polsce</span>
+  </div>
+  <div class="curr-grid" id="curr-container"></div>
+  <div class="sec-h" style="margin-top:32px;margin-bottom:16px;">
+    <h2 style="font-size:20px">Podsumowanie budżetu / osoba</h2>
+  </div>
+  <div id="cost-container"></div>
+</div>
+</section>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+
+const days = [
+  {
+    date:"PN 25/5", title:"Wylot · Saloniki",
+    sub:"Lot Poznań → Saloniki, jedna noc w centrum",
+    flags:["🇵🇱","🇬🇷"], badges:[{t:"✈ lot",c:"fly"}],
+    hours:[
+      {t:"14:00",type:"transit",main:"Wyjazd na Ławicę",detail:"Na lotnisko min. 2h przed odlotem"},
+      {t:"15:20",type:"fly",main:"✈ Ryanair FR 2552 Poznań → Saloniki",detail:"Lot 2h 15min",cost:"348 zł/os"},
+      {t:"18:35",type:"fly",main:"🛬 Lądowanie Thessaloniki SKG",detail:"Bagaż i wyjście z terminala zajmą ~35 min"},
+      {t:"19:15",type:"transit",main:"Bus 78 na dworzec KTEL Macedonia",detail:"Odjeżdża co 30 min z przystanku przed terminalem",cost:"2€/os"},
+      {t:"19:50",type:"camp",main:"Check-in hotel",detail:"Najlepiej coś w pobliżu KTEL — jutro wychodzisz o 5:30"},
+      {t:"20:30",type:"food",main:"Kolacja",detail:"Gyros albo souvlaki, dzielnica Ladadika",cost:"~10€/os"},
+      {t:"21:30",type:"transit",main:"Kup bilet KTEL na jutro rano",detail:"Dworzec Macedonia, Giannitson 244 · kasa do 22:00 · kierunek Florina",cost:"~13€/os"},
+      {t:"22:00",type:"info",main:"Spanie — jutro wstajesz o 5:00",detail:"Naładuj powerbank, pobierz mapę Pelistera offline w Mapy.com"},
+    ],
+    tip:{text:"Gotówkę w EUR weź z Polski. Na lotnisku jest Euronet ale prowizja wysoka — lepiej Alpha Bank w centrum.",type:"blue"}
+  },
+  {
+    date:"WT 26/5", title:"Saloniki → Dihovo · Start",
+    sub:"Bus o świcie, dwie taksówki, granica z Macedonią",
+    flags:["🇬🇷","🇲🇰"], badges:[{t:"🚌 bus",c:"transit"},{t:"🥾 start",c:"hike"}],
+    hours:[
+      {t:"05:00",type:"sun",main:"☀️ Pobudka",detail:"Śniadanie z zapasów + kawa instant"},
+      {t:"05:30",type:"transit",main:"Taxi do KTEL Macedonia",detail:"5 min jazdy, bilet masz już z wczoraj",cost:"~3€"},
+      {t:"06:00",type:"fly",main:"🚌 Bus KTEL → Florina",detail:"Via Giannitsa i Edessa, ~2h 45min, można spać",cost:"13€"},
+      {t:"08:45",type:"transit",main:"Florina",detail:"Mały dworzec w centrum, można wziąć kawę"},
+      {t:"09:00",type:"transit",main:"🚕 Taxi do granicy Niki",detail:"14 km, ~15 min, cel to 10€",cost:"~10€/os"},
+      {t:"09:20",type:"info",main:"🛂 Granica Medžitlija / Niki",detail:"Czynna 24/7, przejście pieszo, paszport lub dowód"},
+      {t:"09:35",type:"transit",main:"🚕 Taxi do Bitoli",detail:"Taksówkarze czekają po macedońskiej stronie, 14 km",cost:"~500 MKD"},
+      {t:"10:00",type:"food",main:"Bitola — zakupy i śniadanie",detail:"Sklep przy dworcu, uzupełnij wodę — ostatnia możliwość ciepłego jedzenia przed górami",cost:"~300 MKD"},
+      {t:"10:30",type:"transit",main:"🚕 Taxi Bitola → Dihovo",detail:"5 km, taksówkarz zna drogę na Pelister",cost:"~130 MKD"},
+      {t:"11:00",type:"hike",main:"🥾 Start z Dihovo (900m npm)",detail:"Centrum informacyjne parku, wpisz się do księgi"},
+      {t:"13:00",type:"food",main:"Przerwa przy schronisku Hotel Molika",detail:"Woda ze źródła, odpoczynek po pierwszych 400m przewyższenia"},
+      {t:"16:00",type:"hike",main:"Schronisko Kopanki (~1900m)",detail:"Ostatnia woda przed granią — uzupełnij wszystko"},
+      {t:"18:00",type:"camp",main:"🏕 Biwak #1 — ok. 2100m",detail:"Szukaj płaskiego miejsca z osłoną od wiatru, widok na dolinę Pelagonia"},
+      {t:"19:30",type:"food",main:"Kolacja i zachód słońca",detail:"Macedonia po horyzont, złote światło — wyjmij aparat"},
+      {t:"21:00",type:"info",main:"Spanie",detail:"Nocą może spaść do 4–6°C, śpiwór na full, buty do środka namiotu"},
+    ],
+    tip:{text:"Bankomat w Bitoli — Stopanska Banka przy głównym placu. Weź 2500 MKD. Nie płać w euro, kurs zły.",type:"blue"}
+  },
+  {
+    date:"ŚR 27/5", title:"Pelister 2601m",
+    sub:"Szczyt, grań, jeziora lodowcowe",
+    flags:["🇲🇰"], badges:[{t:"↑2601m",c:"hike"},{t:"🏕 biwak",c:"camp"}],
+    hours:[
+      {t:"05:00",type:"sun",main:"☀️ Wschód słońca na 2100m",detail:"Czerwone niebo nad Macedonią, można poleżeć 15 min w śpiworze i patrzeć"},
+      {t:"05:30",type:"food",main:"Śniadanie — dużo węglowodanów",detail:"Kasza lub owsianka + kawa, ciężki dzień przed tobą"},
+      {t:"06:00",type:"hike",main:"🥾 Na szczyt, +500m przewyższenia",detail:"Rocky Trail, podłoże skaliste, od 2300m może leżeć śnieg"},
+      {t:"08:30",type:"hike",main:"Ostatnie 200m pod kopiec",detail:"Widoki otwierają się na Grecję i Albanię jednocześnie"},
+      {t:"09:30",type:"hike",main:"🏔 Szczyt Pelister — 2601m",detail:"Krzyż na szczycie, widok na trzy kraje, skrzynka szczytowa"},
+      {t:"10:00",type:"food",main:"Przerwa na szczycie",detail:"Czekolada, orzechy, na wietrze może być chłodno — kurtka",},
+      {t:"10:30",type:"hike",main:"Grań → Orlov Vrv (4,5 km)",detail:"Wyeksponowana grań, po obu stronach widać jeziora Prespa"},
+      {t:"12:30",type:"hike",main:"Orlov Vrv — 2285m",detail:"Drugi szczyt, rzadziej odwiedzany, panorama na wszystkie strony"},
+      {t:"13:00",type:"food",main:"Obiad przy skałach",detail:"Liofilizat na kuchence, znajdź miejsce osłonięte od wiatru"},
+      {t:"14:30",type:"hike",main:"Zejście do Golemo Ezero (~2218m)",detail:"Lodowcowe jezioro, przejrzysta woda, żyje w nim endemiczna pstrąg macedońska"},
+      {t:"16:00",type:"hike",main:"Malo Ezero (~2180m)",detail:"Oba to Oczy Pelistera — tutaj nabierz wody przez Sawyer"},
+      {t:"17:30",type:"camp",main:"🏕 Biwak #2 — przy jeziorze",detail:"Odejdź 200m od brzegu, namiot prostopadle do kierunku wiatru"},
+      {t:"19:00",type:"food",main:"Kolacja",detail:"Na 2200m niebo wygląda inaczej — Droga Mleczna widoczna gołym okiem 🌌"},
+      {t:"21:00",type:"info",main:"Spanie — jutro granica i Albania",detail:"Spakuj rano, wychodzimy szybko"},
+    ],
+    tip:{text:"Wodę filtruj przez Sawyer nawet jeśli wygląda czysto. Linki namiotu naciągnij mocno — nocami na grani wieje porządnie.",type:"green"}
+  },
+  {
+    date:"CZW 28/5", title:"Zejście · Granica MK→AL",
+    sub:"Koniec Trasy 1, wejście do Albanii",
+    flags:["🇲🇰","🇦🇱"], badges:[{t:"🥾 finisz T1",c:"hike"},{t:"🛂 granica",c:"transit"}],
+    hours:[
+      {t:"06:00",type:"sun",main:"Ostatni świt na macedońskiej grani",detail:"Prespa z góry wygląda jak na mapie — ostatnie zdjęcia stąd"},
+      {t:"06:30",type:"food",main:"Śniadanie i zwijanie obozu",detail:"Zostaw teren czysty, użyj łopatki"},
+      {t:"07:00",type:"hike",main:"🥾 Zejście do Brajchino (9,8 km)",detail:"Schodzisz z 2200m na 900m — kijki obowiązkowo, kolana będą wdzięczne"},
+      {t:"10:00",type:"hike",main:"🎉 Brajchino — koniec Trasy 1",detail:"Mały sklep, uzupełnij wodę i coś do jedzenia",cost:"~100 MKD"},
+      {t:"10:30",type:"transit",main:"🚗 Autostop do granicy Stenje (~25 km)",detail:"Stańcie przy drodze z plecakami, ktoś zatrzyma się"},
+      {t:"11:30",type:"info",main:"🛂 Granica Stenje (MK) — wyjście",detail:"Szybko, kilka minut, pieczątkę wyjazdu"},
+      {t:"11:40",type:"transit",main:"Strefa neutralna — kilkaset metrów pieszo",detail:"Widok na jezioro po obu stronach"},
+      {t:"11:50",type:"info",main:"🛂 Granica Goricë — wejście do Albanii",detail:"Wpisują w paszport, mogą sprawdzić plecak, po angielsku raczej nie mówią"},
+      {t:"12:15",type:"food",main:"Goricë e Madhe — odpoczynek",detail:"Wioska macedońskiej mniejszości, jest studnia z wodą"},
+      {t:"13:30",type:"food",main:"Obiad",detail:"Liofilizat, nogi wyciągnięte — trzy dni gór za wami"},
+      {t:"15:00",type:"camp",main:"🏕 Biwak #3 — okolice Goricë",detail:"Płaski teren przy lesie, jutro wychodzisz o 6–7"},
+      {t:"17:00",type:"info",main:"Przygotuj trasę na jutro",detail:"Mapy.com offline, Trasa 2, naładuj powerbank, nabierz wody"},
+      {t:"20:00",type:"info",main:"Spanie",detail:"Jutro 15 km, spokojny dzień — ale lepiej wyspać się porządnie"},
+    ],
+    tip:{text:"Stenje to spokojne przejście, dziennie przejeżdża kilka aut. Jeśli autostop nie idzie po 30 min — wróć do Brajchino i zapytaj w sklepie, ktoś na pewno jedzie w tamtą stronę.",type:"amber"}
+  },
+  {
+    date:"PT 29/5", title:"Trasa 2 · Prespa · 15 km",
+    sub:"Dzień przy jeziorze, pelikany, zero turystów",
+    flags:["🇦🇱"], badges:[{t:"15 km",c:"hike"},{t:"~5h",c:"hike"}],
+    hours:[
+      {t:"06:00",type:"sun",main:"☀️ Wschód słońca nad Presspą",detail:"Pelikany zlatują się od rana, mgła nad wodą — warto poczekać chwilę przed wyruszeniem"},
+      {t:"06:30",type:"food",main:"Śniadanie",detail:"Dziś tylko 15 km, można zjeść spokojnie"},
+      {t:"07:00",type:"hike",main:"🥾 Start Trasy 2 z Goricë e Madhe",detail:"Szlak wzdłuż wschodniego brzegu jeziora"},
+      {t:"08:30",type:"hike",main:"Park Narodowy Prespa",detail:"Kolonie pelikanów białych i kędzierzawych — nie podchodź za blisko"},
+      {t:"10:00",type:"food",main:"Przerwa",detail:"Usiądź przy wodzie, nie ma pośpiechu"},
+      {t:"11:00",type:"hike",main:"Punkt widokowy nad jeziorem",detail:"Jezioro po lewej, macedońskie wzgórza po prawej, granica trzech krajów w zasięgu wzroku"},
+      {t:"12:30",type:"food",main:"Obiad przy szlaku",detail:"Liofilizat, nogi do góry — po Pelisterze to jest jak spacer"},
+      {t:"14:00",type:"hike",main:"Kilka małych wiosek albanskich",detail:"Lokalni często proponują wodę, nie odmawiaj"},
+      {t:"16:00",type:"hike",main:"🏁 15 km zrobione",detail:"Dobry punkt na biwak z widokiem na jezioro"},
+      {t:"16:30",type:"camp",main:"🏕 Biwak #4 — nad jeziorem",detail:"Spokojne miejsce, wieczorami cisza totalna"},
+      {t:"19:00",type:"food",main:"Kolacja o zachodzie słońca",detail:"Jezioro o tej godzinie zmienia kolory — warto siedzieć na zewnątrz"},
+      {t:"21:00",type:"info",main:"Spanie",detail:"Jutro finisz do Bregas i stopa do Tirany — spakuj się wieczorem"},
+    ],
+    tip:{text:"Spokojny dzień po Pelisterze. 15 km po płaskim nad jeziorem to nic trudnego — ciesz się widokami.",type:"green"}
+  },
+  {
+    date:"SOB 30/5", title:"Finisz · Stopa · Tirana · Lotnisko",
+    sub:"Ostatnie 11 km do Bregas, 200 km autostopem do Tirany",
+    flags:["🇦🇱"], badges:[{t:"🥾 finisz T2",c:"hike"},{t:"🚗 stopa",c:"transit"},{t:"🌙 lotnisko",c:"camp"}],
+    hours:[
+      {t:"07:00",type:"sun",main:"Ostatni biwakowy ranek",detail:"Ostatni wschód słońca nad Presspą, spokojne pakowanie"},
+      {t:"07:30",type:"food",main:"Śniadanie z resztek",detail:"Zjedz co zostało, nie ma sensu taszczać do Tirany"},
+      {t:"08:00",type:"hike",main:"🥾 Ostatnie 11 km do Bregas",detail:"Spokojne tempo wzdłuż jeziora, Bregas widać z daleka"},
+      {t:"10:30",type:"hike",main:"🏁 Bregas — koniec Trasy 2",detail:"26 km łącznie, cały dzień przed tobą na dojazd"},
+      {t:"11:00",type:"transit",main:"🚗 Autostop → Korçë (~50 km)",detail:"Droga SH79, stań przy wjeździe do wsi — zatrzyma się ktoś",cost:"0"},
+      {t:"12:30",type:"food",main:"Korçë — obiad",detail:"Byrek z serem albo naleśniki, kawa albańska, ładne miasto",cost:"~300 ALL"},
+      {t:"13:30",type:"transit",main:"🚗 Autostop → Tirana (~150 km)",detail:"Furgony jadą regularnie, możliwa przesiadka w Elbasan",cost:"0–5€"},
+      {t:"16:30",type:"transit",main:"Tirana",detail:"Plac Skanderbega, centrum, koniec podróży lądowej"},
+      {t:"17:00",type:"food",main:"Ostatni porządny posiłek",detail:"Tave kosi albo meze w dzielnicy Blloku",cost:"~700 ALL"},
+      {t:"18:00",type:"info",main:"Spacer po centrum",detail:"Kolorowe fasady kamienic, plac Skanderbega, można zajrzeć do Bunk'Art"},
+      {t:"19:00",type:"transit",main:"Na lotnisko TIA",detail:"Bus ~200 ALL albo taxi ~1500 ALL, 17 km od centrum",cost:"200–1500 ALL"},
+      {t:"19:30",type:"camp",main:"Lotnisko — odprawa i czekanie",detail:"Terminal nieduży, ławki wygodne, WiFi działa"},
+      {t:"03:30",type:"sun",main:"⏰ Pobudka",detail:"Lot za 2h 20min, idź do kolejki odprawy"},
+      {t:"04:00",type:"info",main:"🛂 Odprawa",detail:"Małe lotnisko, 15–20 min na całość"},
+      {t:"04:30",type:"transit",main:"Gate",detail:"Ostatnia kawa ☕"},
+    ],
+    tip:{text:"Lot o 05:50 — bądź przy bramce o 04:30. Lotnisko TIA jest małe i sprawne, wystarczy 30 min na całość.",type:"blue"}
+  },
+  {
+    date:"ND 31/5", title:"Powrót do domu",
+    sub:"Tirana → Kraków, w Polsce przed śniadaniem",
+    flags:["🇦🇱","🇵🇱"], badges:[{t:"✈ FR 7555",c:"fly"}],
+    hours:[
+      {t:"05:50",type:"fly",main:"✈ Ryanair FR 7555 Tirana → Kraków",detail:"Przez okno widać Alpy o świcie",cost:"243 zł/os"},
+      {t:"07:40",type:"fly",main:"🛬 Kraków KRK",detail:"Bagaż, wyjście, powrót do polskiej rzeczywistości"},
+      {t:"08:30",type:"food",main:"Śniadanie w domu",detail:"Wyprawa za tobą. Jajecznica się należy."},
+    ],
+    tip:{text:"Z Krakowa do Poznania: IC ~3h albo FlixBus ~4h.",type:"blue"}
+  }
+];
+
+const gearCats = [
+  {name:"PLECAK I ORGANIZACJA", items:[
+    {n:"Plecak trekkingowy 55–65L",d:"Osprey Atmos/Exos, Deuter Futura · cel <1,3 kg",w:1350,p:"250–500 zł"},
+    {n:"Pokrowiec przeciwdeszczowy",d:"Dopasowany do rozmiaru plecaka",w:80,p:"30–60 zł"},
+    {n:"Worek kompresyjny duży",d:"Na śpiwór",w:50,p:"20–30 zł"},
+    {n:"Worek kompresyjny mały",d:"Na ubrania",w:40,p:"15–25 zł"},
+    {n:"Worek wodoodporny A5",d:"Dokumenty + elektronika",w:35,p:"15 zł"},
+    {n:"Worek na brudne ubrania",d:"Lekki nylon",w:20,p:"2 zł"},
+  ]},
+  {name:"NAMIOT I NOCLEG", items:[
+    {n:"Namiot 2–3 os. (waga którą niesiesz)",d:"MSR Hubba Hubba / Naturehike Cloud · 2–2,5 kg całości",w:2500,p:"500–1500 zł",must:true},
+    {n:"Śpiwór puchowy do -5°C",d:"Komfort 0°C — noce na 2200m schodzą do 4°C",w:900,p:"350–700 zł",must:true},
+    {n:"Karimat samopompująca lub TPU",d:"Alternatywa: lekka pianka EVA 8mm",w:350,p:"50–200 zł"},
+    {n:"Worek wodoodporny na śpiwór",d:"1 mokry dzień = mokry śpiwór = kłopoty",w:30,p:"20 zł"},
+  ]},
+  {name:"UBRANIA", items:[
+    {n:"Buty trekkingowe za kostkę (na nogach)",d:"Salomon X Ultra / Meindl · waterproof · min. 6 mies. przed wyjazdem",w:0,p:"300–700 zł",onFeet:true},
+    {n:"Kurtka przeciwdeszczowa hardshell",d:"Min. 10 000mm · 3-warstwowa · Gore-Tex lub podobna",w:450,p:"250–700 zł",must:true},
+    {n:"Kurtka puchowa lub fleece",d:"Na wieczory biwakowe, na szczyt",w:380,p:"200–500 zł"},
+    {n:"Spodnie trekkingowe (na nogach)",d:"Szybkoschnące, stretch · nie dżinsy",w:0,p:"100–250 zł",onFeet:true},
+    {n:"Getry termoaktywne",d:"Na noce w namiocie i zimne poranki na grani",w:180,p:"60–120 zł"},
+    {n:"Koszulka techniczna ×3",d:"Syntetyk lub merino, nie bawełna",w:300,p:"3×60–120 zł"},
+    {n:"Bielizna techniczna ×2",d:"Merino polecane",w:140,p:"2×50–120 zł"},
+    {n:"Skarpety trekkingowe ×3",d:"Min. 1 para wełna merino",w:210,p:"3×30–70 zł"},
+    {n:"Czapka wełniana lub fleece",d:"Na 2600m bywa zimno nawet w maju",w:80,p:"30–60 zł"},
+    {n:"Rękawiczki lekkie",d:"Fleece lub wełna · cienka para wystarczy",w:80,p:"30–80 zł"},
+    {n:"Buff / komin",d:"Wielofunkcyjny",w:50,p:"30–50 zł"},
+    {n:"Sandały EVA do obozu",d:"Nogi muszą odpocząć po długim dniu, Crocs albo cokolwiek lekkiego",w:200,p:"20–80 zł"},
+    {n:"Opaska na głowę",d:"Pot + słońce na odkrytej grani",w:30,p:"10 zł"},
+  ]},
+  {name:"KUCHNIA", items:[
+    {n:"Kuchenka gazowa (1 szt. ÷3)",d:"MSR PocketRocket 2 / Primus Essential · 73g",w:73,p:"80–180 zł",shared:true},
+    {n:"Butla gazowa 230ml ×2 (÷3)",d:"~2 szt. na 5 dni gotowania",w:450,p:"2×20–35 zł",shared:true},
+    {n:"Garnek tytanowy 0,9–1,3L (÷3)",d:"Snow Peak Trek 900 · 1 szt. na grupę",w:140,p:"80–250 zł",shared:true},
+    {n:"Kubek/miska tytanowa",d:"Snow Peak Ti-Single · pije i je się z jednego",w:80,p:"50–100 zł"},
+    {n:"Łyżka/spork tytanowa",d:"Sea to Summit Alpha Light",w:25,p:"25–50 zł"},
+    {n:"Nóż składany",d:"Victorinox Hiker",w:60,p:"50–120 zł"},
+    {n:"Zapalniczka ×2",d:"1 w kurtce, 1 zapasowa w suchym worku",w:25,p:"6 zł"},
+    {n:"Zapałki wodoodporne ×1 opak.",d:"Backup",w:20,p:"5 zł"},
+  ]},
+  {name:"JEDZENIE I WODA", items:[
+    {n:"Liofilizaty dania główne ×10",d:"Trek'n Eat / Tactical · 500–600 kcal/szt",w:1200,p:"~300 zł/3os"},
+    {n:"Orzechy mieszane 500g",d:"Najlepszy stosunek kcal/waga",w:500,p:"~13 zł"},
+    {n:"Czekolada ×6 tablic. 100g",d:"Energia + morale",w:600,p:"~24 zł"},
+    {n:"Batoniki energetyczne ×10",d:"Clif Bar / Nakd",w:400,p:"~20 zł"},
+    {n:"Kasza gryczana błysk. ×5",d:"Śniadania",w:400,p:"~10 zł"},
+    {n:"Owsianka instant ×8",d:"Szybkie śniadanie",w:300,p:"~12 zł"},
+    {n:"Masło orzechowe tubki ×8",d:"30g · snack + kalorie",w:240,p:"~16 zł"},
+    {n:"Kawa/herbata instant ×15",d:"Poranne rytuały — obowiązkowe",w:100,p:"~10 zł"},
+    {n:"Elektrolity ×10 sasz.",d:"Na upał i wysiłek przy 9h marszu",w:80,p:"~20 zł"},
+    {n:"Pieczywo chrupkie ×2 paczki",d:"Do masła orzechowego",w:200,p:"~8 zł"},
+    {n:"Filtr wody Sawyer Squeeze",d:"Niezbędny przy wodzie z potoków i jezior",w:90,p:"120–180 zł",must:true},
+    {n:"Tabletki do wody ×20",d:"Zapas na wypadek",w:30,p:"15 zł"},
+    {n:"Bukłak 2L + butelka 1L",d:"Min. 3L pojemności jednocześnie",w:150,p:"30–80 zł"},
+  ]},
+  {name:"NAWIGACJA I ELEKTRONIKA", items:[
+    {n:"Telefon (na sobie)",d:"Mapy.com offline + OsmAnd + inDrive app",w:0,p:"masz",onFeet:true},
+    {n:"Powerbank 10 000 mAh",d:"~5 ładowań telefonu, Anker 737 waży 222g",w:222,p:"80–150 zł",must:true},
+    {n:"Powerbank 5 000 mAh (opcja)",d:"Zapas jeśli masz",w:120,p:"50–80 zł"},
+    {n:"Kabel USB-C",d:"Krótki 20cm wystarczy",w:25,p:"10–15 zł"},
+    {n:"Latarka czołowa",d:"Black Diamond Spot / Petzl Actik · min. 200 lm · IPX4",w:91,p:"80–200 zł"},
+    {n:"Baterie AAA ×3 zapasowe",d:"Do czołówki · 7 nocy w górach",w:36,p:"8 zł"},
+  ]},
+  {name:"KIJKI I BEZPIECZEŃSTWO", items:[
+    {n:"Kijki trekkingowe (para)",d:"Zejście z 2601m z plecakiem bez kijków = kolana na tydzień",w:400,p:"80–300 zł",must:true},
+    {n:"Apteczka",d:"Plastry, Compeed na pęcherze, bandaż elastyczny, ibuprofen, paracetamol, węgiel aktywny, Betadine, nożyczki, pęseta, folia NRC",w:220,p:"60–120 zł",must:true},
+    {n:"Gwizdek awaryjny",d:"Na szlaku w górach",w:10,p:"5 zł"},
+    {n:"Folia NRC (dodatkowa)",d:"Zapas",w:40,p:"5 zł"},
+    {n:"Mapa papierowa Pelister NP",d:"Wydrukuj z Mapy.com, telefon może paść",w:30,p:"0–20 zł"},
+  ]},
+  {name:"HIGIENA", items:[
+    {n:"Krem SPF 50+ (30ml)",d:"Na otwartej grani nie ma gdzie się schować",w:60,p:"15–30 zł"},
+    {n:"Repelent DEET 30%+ (50ml)",d:"Lasy albańskie, kleszcze i komary",w:80,p:"20–40 zł"},
+    {n:"Ręcznik mikrofibra S/M",d:"Sea to Summit · 100g",w:100,p:"40–80 zł"},
+    {n:"Mydło biodegradowalne 50ml",d:"Dr. Bronner's · do ciała i naczyń",w:60,p:"15–30 zł"},
+    {n:"Pasta + szczoteczka (mini)",d:"",w:50,p:"5 zł"},
+    {n:"Papier toaletowy ×2 (spłaszczone)",d:"Wyjmij karton środka — 2× mniej miejsca",w:80,p:"3 zł"},
+    {n:"Łopatka do zakopywania",d:"Leave No Trace w parku narodowym",w:30,p:"15–30 zł"},
+    {n:"Dezodorant stick mały",d:"",w:40,p:"10 zł"},
+    {n:"Chusteczki nawilżane ×1 opak.",d:"Na dni bez wody przy biwaku",w:80,p:"5 zł"},
+  ]},
+  {name:"DOKUMENTY I FINANSE", items:[
+    {n:"Dowód osobisty",d:"PL dowód wystarczy do MK i AL · wodoodporne etui NA SOBIE",w:12,p:"—",onFeet:true},
+    {n:"Ubezpieczenie podróżne (druk)",d:"Z NNW górskim i assistance — bez tego nie wchodź na Pelister",w:5,p:"40–80 zł",must:true},
+    {n:"Gotówka EUR ~70€",d:"Bus KTEL ~13€ + taxi ~20€ + jedzenie Saloniki ~15€ + rezerwa ~22€",w:14,p:"~295 zł",onFeet:true},
+    {n:"Gotówka MKD ~2500 denarów",d:"Taxi Bitola ~130 + NP ~60 + jedzenie ~500 + rezerwa",w:12,p:"~170 zł",onFeet:true},
+    {n:"Gotówka ALL ~4000 lek",d:"Jedzenie 3 dni ~1500 + napoje ~500 + bus lotnisko ~1500 + rezerwa",w:14,p:"~170 zł",onFeet:true},
+    {n:"Karta Revolut/Wise",d:"Backup · bez prowizji za przewalutowanie",w:5,p:"bezpłatna"},
+    {n:"Numery alarmowe na papierze",d:"112 EU · 194 MK ratownictwo · 127 AL policja",w:1,p:"—"},
+  ]},
+];
+
+const foodPL = [
+  {n:"Liofilizaty dania główne",qty:"10 szt./os",p:"~300 zł/3os",note:"Trek'n Eat / Tactical · 500–600 kcal/szt · na obiad i kolację"},
+  {n:"Orzechy mieszane",qty:"500g/os",p:"~13 zł",note:"Nerkowce, migdały, orzechy włoskie"},
+  {n:"Czekolada deserowa ×6",qty:"600g/os",p:"~24 zł",note:"Energia + morale"},
+  {n:"Batoniki energetyczne ×10",qty:"300g/os",p:"~20 zł",note:"Clif Bar / Nakd / Lion"},
+  {n:"Kasza gryczana błysk. ×5 porcji",qty:"400g/os",p:"~10 zł",note:"Śniadania w górach"},
+  {n:"Owsianka instant ×8 sasz.",qty:"300g/os",p:"~12 zł",note:"Szybkie śniadanie"},
+  {n:"Masło orzechowe tubki ×8",qty:"240g/os",p:"~16 zł",note:"30g/tubka · snack + kalorie"},
+  {n:"Kawa/herbata instant ×15",qty:"100g/os",p:"~10 zł",note:"Poranny rytuał — obowiązkowe"},
+  {n:"Elektrolity ×10 sasz.",qty:"80g/os",p:"~20 zł",note:"Przy 9h marszu kluczowe"},
+  {n:"Pieczywo chrupkie ×2",qty:"200g/os",p:"~8 zł",note:"Do masła orzechowego"},
+  {n:"Suszone owoce mix 200g",qty:"200g/os",p:"~12 zł",note:"Morele, żurawina, rodzynki"},
+];
+const foodRoute = [
+  {n:"Kolacja w Salonikach",qty:"1×",p:"~10€",note:"Gyros/souvlaki · jedz do syta — ostatni porządny posiłek"},
+  {n:"Śniadanie na dworcu KTEL",qty:"1×",p:"~3€",note:"Kawa + kanapka"},
+  {n:"Obiad w Bitoli",qty:"1×",p:"~300 MKD",note:"Restauracja przy Shirok Sokak · kuchnia macedońska"},
+  {n:"Woda butelkowana backup",qty:"2L",p:"~100 MKD",note:"Przed wejściem na góry"},
+  {n:"Obiad w Korçë",qty:"1×",p:"~200 ALL",note:"Byrek lub giropita"},
+  {n:"Obiad w Tiranie",qty:"1×",p:"~700 ALL",note:"Tave kosi lub meze · dzielnica Blloku"},
+  {n:"Kawa i napoje na trasie",qty:"~6×",p:"~1200 ALL",note:"W wioskach i miastach"},
+  {n:"Lody / słodycze bonus",qty:"kilka",p:"~500 ALL",note:"W Tiranie — ostatni dzień"},
+];
+
+const currencies = [
+  {flag:"🇪🇺",name:"EURO (EUR)",amount:"70€",pln:"~295 zł",
+    uses:[
+      {l:"Bus KTEL Saloniki→Florina",v:"~13€"},
+      {l:"Taxi Florina→granica Niki",v:"~10€"},
+      {l:"Taxi Niki→Bitola (MK taksówka)",v:"~8€"},
+      {l:"Kolacja + śniadanie Saloniki",v:"~13€"},
+      {l:"Rezerwa awaryjna",v:"~26€"},
+    ]},
+  {flag:"🇲🇰",name:"DENAR MK (MKD)",amount:"2500 MKD",pln:"~170 zł",
+    uses:[
+      {l:"Taxi Bitola→Dihovo",v:"130 MKD"},
+      {l:"Bilet wstępu Pelister NP",v:"60 MKD"},
+      {l:"Sklep/jedzenie Bitola",v:"~500 MKD"},
+      {l:"Woda butelkowana",v:"~100 MKD"},
+      {l:"Rezerwa",v:"~1710 MKD"},
+    ]},
+  {flag:"🇦🇱",name:"LEK ALBAŃSKI (ALL)",amount:"4000 ALL",pln:"~170 zł",
+    uses:[
+      {l:"Jedzenie 3 dni (obiad/kawa)",v:"~1500 ALL"},
+      {l:"Napoje i woda",v:"~600 ALL"},
+      {l:"Bus/taxi Tirana→lotnisko",v:"~1500 ALL"},
+      {l:"Rezerwa awaryjna",v:"~400 ALL"},
+    ]},
+];
+const costs = [
+  {l:"Ryanair FR 2552 (lot tam)",v:"348 zł"},
+  {l:"Ryanair FR 7555 (lot z powrotem)",v:"243 zł"},
+  {l:"Hotel Saloniki 1 noc ÷3",v:"~18 zł"},
+  {l:"Gotówka EUR (transport + jedzenie GR)",v:"~295 zł"},
+  {l:"Gotówka MKD (Macedonia)",v:"~170 zł"},
+  {l:"Gotówka ALL (Albania)",v:"~170 zł"},
+  {l:"Jedzenie z Polski (7 dni)",v:"~145 zł"},
+  {l:"Ubezpieczenie podróżne",v:"~60 zł"},
+  {l:"ŁĄCZNIE",v:"~1449 zł",bold:true},
+];
+
+// ============================================================
+// BUILD
+// ============================================================
+
+function buildDays(){
+  const c = document.getElementById('days-container');
+  c.innerHTML = days.map((d,i) => `
+    <div class="day-block" id="day${i}">
+      <div class="day-head" onclick="toggleDay(${i})">
+        <div>
+          <div class="day-date">${d.date}</div>
+        </div>
+        <div class="day-title-wrap">
+          <div class="day-title">${d.title}</div>
+          <div class="day-sub">${d.sub}</div>
+        </div>
+        <div class="day-flags">
+          ${d.flags.map((f,fi) => `<span class="dflag">${f}</span>${fi<d.flags.length-1?'<span class="darr">→</span>':''}`).join('')}
+        </div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <div class="day-badges">${d.badges.map(b=>`<span class="badge b-${b.c}">${b.t}</span>`).join('')}</div>
+          <span class="chevron">▼</span>
+        </div>
+      </div>
+      <div class="day-body">
+        <div class="timeline">
+          ${d.hours.map((h,hi) => `
+            <div class="tl-row">
+              <div class="tl-time">${h.t}</div>
+              <div class="tl-spine">
+                <div class="tl-dot ${h.type}"></div>
+                ${hi < d.hours.length-1 ? '<div class="tl-line"></div>' : ''}
+              </div>
+              <div class="tl-content">
+                <div class="tl-main">${h.main}</div>
+                ${h.detail ? `<div class="tl-detail">${h.detail}</div>` : ''}
+                ${h.cost ? `<div class="tl-cost">${h.cost}</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        ${d.tip ? `<div class="tip ${d.tip.type}">${d.tip.text}</div>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleDay(i){
+  const el = document.getElementById('day'+i);
+  el.classList.toggle('open');
+}
+
+function buildGear(){
+  const c = document.getElementById('gear-container');
+  let html = '';
+  let allIdx = 0;
+  gearCats.forEach((cat, ci) => {
+    html += `<div class="gear-cat-label">${cat.name}</div>`;
+    cat.items.forEach((it, ii) => {
+      const idx = allIdx++;
+      const checked = it.onFeet ? false : true;
+      html += `
+        <div class="gi${!checked?' done':''}" id="girow${idx}">
+          <input type="checkbox" id="gi${idx}" ${checked?'checked':''} onchange="toggleGear(${idx},${it.w||0})">
+          <div>
+            <div class="gi-name${!checked?' crossed':''}" id="gin${idx}">${it.n}${it.shared?'<span class="stag">÷3</span>':''}${it.must?'<span class="must-tag">!</span>':''}${it.onFeet?'<span class="stag">na sobie</span>':''}</div>
+            ${it.d ? `<div class="gi-d">${it.d}</div>` : ''}
+          </div>
+          <div class="gi-price">${it.p}</div>
+          <div class="gi-w">${it.onFeet?'na sobie':it.w+'g'}</div>
+        </div>`;
+    });
+  });
+  c.innerHTML = html;
+  recalcGear();
+}
+
+let gearWeights = [];
+function initGearWeights(){
+  gearCats.forEach(cat => {
+    cat.items.forEach(it => {
+      gearWeights.push(it.w || 0);
+    });
+  });
+}
+function toggleGear(idx, w){
+  const cb = document.getElementById('gi'+idx);
+  const row = document.getElementById('girow'+idx);
+  const nm = document.getElementById('gin'+idx);
+  if(cb.checked){ row.classList.remove('done'); nm.classList.remove('crossed'); }
+  else { row.classList.add('done'); nm.classList.add('crossed'); }
+  recalcGear();
+}
+function recalcGear(){
+  let total=0, chk=0, all=0;
+  let idx=0;
+  gearCats.forEach(cat => {
+    cat.items.forEach(it => {
+      all++;
+      const cb = document.getElementById('gi'+idx);
+      if(cb && cb.checked){ total += (it.w||0); chk++; }
+      idx++;
+    });
+  });
+  const kg = (total/1000).toFixed(2);
+  const numEl = document.getElementById('w-num');
+  const barEl = document.getElementById('wbar');
+  const pct = Math.min(100,(total/20000)*100);
+  numEl.textContent = kg;
+  barEl.style.width = pct+'%';
+  document.getElementById('w-meta-top').textContent = chk+' / '+all+' zaznaczonych';
+
+  if(total > 18000){
+    numEl.className='w-num danger';
+    barEl.className='wbar-fill danger';
+    document.getElementById('w-status').textContent='Za ciężko ⚠️';
+    document.getElementById('w-status').style.color='var(--accent3)';
+  } else if(total > 15000){
+    numEl.className='w-num warn';
+    barEl.className='wbar-fill warn';
+    document.getElementById('w-status').textContent='Uważaj';
+    document.getElementById('w-status').style.color='var(--accent4)';
+  } else {
+    numEl.className='w-num';
+    barEl.className='wbar-fill';
+    document.getElementById('w-status').textContent='OK ✓';
+    document.getElementById('w-status').style.color='var(--accent)';
+  }
+}
+
+function buildFood(){
+  const c = document.getElementById('food-container');
+  let h = '';
+  h += `<div class="food-section-title">Z Polski — kupujesz przed wyjazdem (na 1 osobę)</div>`;
+  h += foodPL.map(f=>`
+    <div class="food-item">
+      <div><div class="fi-name">${f.n}</div><div class="fi-note">${f.note}</div></div>
+      <div class="fi-qty">${f.qty}</div>
+      <div class="fi-price">${f.p}</div>
+    </div>`).join('');
+  h += `<div class="food-total"><span>Łącznie z Polski / 1 osoba</span><span>~145 zł</span></div>`;
+  h += `<div class="food-section-title">Na trasie — uzupełnienia</div>`;
+  h += foodRoute.map(f=>`
+    <div class="food-item">
+      <div><div class="fi-name">${f.n}</div><div class="fi-note">${f.note}</div></div>
+      <div class="fi-qty">${f.qty}</div>
+      <div class="fi-price">${f.p}</div>
+    </div>`).join('');
+  c.innerHTML = h;
+}
+
+function buildMoney(){
+  document.getElementById('curr-container').innerHTML = currencies.map(c => `
+    <div class="curr-card">
+      <span class="curr-emoji">${c.flag}</span>
+      <div class="curr-name">${c.name}</div>
+      <div class="curr-amount">${c.amount}</div>
+      <div class="curr-pln">≈ ${c.pln} / osobę</div>
+      ${c.uses.map(u=>`<div class="curr-line"><span>${u.l}</span><span>${u.v}</span></div>`).join('')}
+    </div>`).join('');
+
+  document.getElementById('cost-container').innerHTML =
+    costs.map(c => `
+      <div class="cost-row${c.bold?' total':''}">
+        <span class="cl">${c.l}</span>
+        <span class="cv">${c.v}</span>
+      </div>`).join('');
+}
+
+function showSection(name, btn){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('s-'+name).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({top: document.querySelector('nav').offsetTop, behavior:'smooth'});
+}
+
+// INIT
+buildDays();
+buildGear();
+buildMoney();
+initGearWeights();
+</script>
+</body>
+</html>
